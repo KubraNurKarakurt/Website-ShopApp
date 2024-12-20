@@ -1,0 +1,37 @@
+
+<style>
+.alert-custom {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-custom span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.alert-custom .close {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+</style>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-custom" role="alert">
+            <span>No products available.</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>

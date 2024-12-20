@@ -1,0 +1,114 @@
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Diğer CSS dosyalarınız -->
+</head>
+
+    <style>
+    .navbar {
+        background-color: #73777c; /* Daha sade ve modern bir renk */
+    }
+
+    .navbar-brand, .nav-link {
+        color: #f8f9fa !important; /* Beyaz renk metin */
+    }
+
+    .nav-link {
+        margin-left: 10px;
+    }
+
+    .nav-link:hover {
+        color: #adb5bd !important; /* Hover efekti için daha açık bir gri */
+    }
+
+    .navbar-brand i, .nav-link i {
+        margin-right: 5px; /* İkon ile metin arasında boşluk */
+    }
+</style>
+
+<div class="navbar bg-dark navbar-dark navbar-expand-sm">
+    <div class="container">
+        <a href="/" class="navbar-brand">
+            <i class="fas fa-store"></i> ShopApp
+        </a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="/products" class="nav-link">
+                    <i class="fas fa-boxes"></i> Products
+                </a>
+            </li>
+
+            @if (User.Identity.IsAuthenticated && !User.IsInRole("admin"))
+            {
+                <li class="nav-item">
+                    <a href="/cart" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/orders" class="nav-link">
+                        <i class="fas fa-receipt"></i> Orders
+                    </a>
+                </li>
+            }
+
+            @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+            {
+                <li class="nav-item">
+                    <a href="/admin/products" class="nav-link">
+                        <i class="fas fa-cogs"></i> Admin Products
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/categories" class="nav-link">
+                        <i class="fas fa-cogs"></i> Admin Categories
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/brands" class="nav-link">
+                        <i class="fas fa-cogs"></i> Admin Brands
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/role/list" class="nav-link">
+                        <i class="fas fa-cogs"></i> Roles
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/user/list" class="nav-link">
+                        <i class="fas fa-users-cog"></i> Users
+                    </a>
+                </li>
+            }
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="nav-item">
+                    <a href="/account/manage" class="nav-link">
+                        <i class="fas fa-user"></i> @User.Identity.Name
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/account/logout" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a href="/account/login" class="nav-link">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/account/register" class="nav-link">
+                        <i class="fas fa-user-plus"></i> Register
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

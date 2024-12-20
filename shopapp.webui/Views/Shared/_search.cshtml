@@ -1,0 +1,58 @@
+  @* <div class="card mt-3">
+      <div class="card-header">
+          <h5>Search</h5>
+      </div>
+      <div class="card-body">
+            <form action="/search">
+                <div class="form-group">
+                    <input name="q" type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-danger btn-sm btn-block">Ara</button>
+            </form>
+      </div>
+  </div> *@
+  
+  <div class="card mt-3 shadow-sm">
+    <div class="card-header bg-secondary text-white">
+        <h5 class="mb-0">Search</h5>
+    </div>
+    <div class="card-body">
+        <form action="/search" method="GET">
+            <div class="input-group">
+                <input name="q" type="text" class="form-control" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-secondary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .card-header {
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .form-control {
+        border-radius: 0;
+    }
+
+    .input-group-append .btn {
+        border-radius: 0;
+    }
+
+    .btn-outline-secondary {
+        color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .btn-outline-secondary:hover {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+</style>
+
+  

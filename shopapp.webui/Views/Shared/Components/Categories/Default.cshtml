@@ -1,0 +1,36 @@
+@model List<Category>
+
+
+<style>
+    .list-group {
+        background-color: #a2a7ad; /* Açık gri zemin */
+    }
+
+    .list-group-item {
+        color: #000; /* Siyah yazı rengi */
+        transition: background-color 0.3s; /* Hover efekti için geçiş */
+    }
+
+    .list-group-item:hover {
+        background-color: #8b8e91; /* Hover olduğunda arkaplan rengi */
+    }
+
+    .list-group-item.active {
+        background-color: #8c8e91; /* Aktif öğe için arkaplan rengi */
+        color: #fff; /* Aktif öğe için yazı rengi */
+    }
+</style>
+
+<div class="list-group mt-4">
+    <a href="/products" class="list-group-item list-group-item-action">Tüm Kategoriler</a>
+
+    @foreach (var item in Model)
+    {
+        <a asp-controller="Shop" 
+           asp-action="List" 
+           asp-route-category="@item.Url" 
+           class="list-group-item list-group-item-action @(ViewBag.SelectedCategory == item.Url ? "active" : "")">
+            @item.Name
+        </a>
+    }
+</div>

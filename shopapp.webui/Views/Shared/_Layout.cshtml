@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <head>
+    <!-- Diğer meta ve başlık etiketleri -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha384-G6E2SFH0fjz5zXj3eDJAkZ8z5zc99PcplR3dNjv3hZql4a3/nJQfkWx5m9O+VtD+" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+     @RenderSection("Css",false)
+     @RenderSection("Styles", required: false)
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Shopapp</title>
+</head>
+<body>
+
+    @await Html.PartialAsync("_navbar")          
+
+    <main class="my-3">
+        <div class="container">     
+
+            @if(TempData["message"]!=null)
+            {
+                <partial name="_ResultMessage" model="@(TempData.Get<AlertMessage>("message"))"/>
+            }      
+             
+            @RenderBody()             
+        </div>
+    </main>
+
+ <footer class="py-5 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Contact</h5>
+                <ul class="list-unstyled">
+                    <li>Address: 1234 Example Street, Example Neighborhood, Example City</li>
+                    <li>Phone: 0123 456 7890</li>
+                    <li>Email: info@example.com</li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <h5>Follow Us</h5>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-twitter fa-2x"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <h3>ShopApp</h3>
+                <p>© 2024. All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    @RenderSection("Scripts",false)
+</body>
+</html> 
+

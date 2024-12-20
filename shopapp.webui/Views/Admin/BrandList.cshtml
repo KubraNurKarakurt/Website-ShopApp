@@ -1,0 +1,43 @@
+@model BrandListViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="h3">Admin Brands</h1>
+        <hr>
+        <a class="btn btn-primary btn-sm" href="/admin/brands/create">Add Brands</a>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td>Name</td>
+                    <td style="width: 150px;"></td>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.Brands.Count>0)
+                {
+                       @foreach (var item in Model.Brands)
+                        {
+                            <tr>
+                                <td>@item.BrandId</td>
+                                <td>@item.BrandName</td>  
+                                <td>
+                                    <a href="/admin/brands/@item.BrandId" class="btn btn-primary btn-sm mr-2">Edit</a>
+                                    
+                                    <form action="/admin/deletebrand" method="POST" style="display: inline;">
+                                        <input type="hidden" name="brandId" value="@item.BrandId">
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>                        </tr>
+                        }
+                }else{
+                    <div class="alert alert-warning">
+                        <h3>No Brands</h3>
+                    </div>
+                }
+
+             
+            </tbody>
+        </table>
+    </div>
+</div>
