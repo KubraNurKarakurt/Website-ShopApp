@@ -3,7 +3,7 @@
 
 ShopApp, ofis ürünleri için hazırlanmış bir e-ticaret web uygulamasıdır. Kullanıcılar ürünleri inceleyebilir, sepete ekleyebilir, sipariş verebilir ve yönetici paneli üzerinden ürün yönetimi yapılabilir.
 
-![Banner](./images/banner.png)
+
 
 ##  Proje Özellikleri
 
@@ -27,9 +27,6 @@ ShopApp, ofis ürünleri için hazırlanmış bir e-ticaret web uygulamasıdır.
 - Bootstrap
 - SQLite
 
-##  Veritabanı Yapısı
-
-![Veritabanı Şeması](./images/database-schema.png)
 
 
 ### Gereksinimler
@@ -44,8 +41,4 @@ ShopApp, ofis ürünleri için hazırlanmış bir e-ticaret web uygulamasıdır.
 - **Admin**: Ürünleri ve siparişleri yönetebilir
 - **Kullanıcı**: Ürünleri görüntüleyip sipariş verebilir
 
-##  Ekran Görüntüsü
 
-Ana sayfa:
-
-![Ana Sayfa](./images/banner.png)
